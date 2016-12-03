@@ -1,0 +1,31 @@
+﻿@model WebCommonApplication.Models.Car
+@{
+    
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>
+        <br>My own inventory<br />
+    </title>
+</head>
+<body>
+    <div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            @Html.LabelFor(m => m.Make, new { @class = "control-label col-md-2" })
+            @Html.EditorFor(m => m.Make)
+        </div>
+        <div>
+            @Html.LabelFor(m => m.Model, new { @class = "control-label col-md-2" })
+            @Html.EditorFor(m => m.Model)
+        </div>
+        <input type="submit" name="Save" />
+    }
+    </div>
+</body>
+</html>
