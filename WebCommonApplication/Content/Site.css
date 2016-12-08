@@ -22,3 +22,13 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.table-footer{
+    display:inline-flex;
+}
+.div-add{
+    padding-left:10%;
+}
+.div-pages{
+    padding-left:15%;
+}

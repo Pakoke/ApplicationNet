@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Inventory.Dtos
 {
-    public class Car
+    public class Vehicle
     {
         public string ID { get; set; }
 
@@ -22,7 +22,7 @@ namespace Inventory.Dtos
         [Required]
         public string Model { get; set; }
 
-        public Car()
+        public Vehicle()
         {
 
         }

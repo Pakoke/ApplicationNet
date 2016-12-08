@@ -7,11 +7,11 @@ using Inventory.Dtos;
 
 namespace Inventory.Repositories
 {
-    public class CarRepository : ICarRepository
+    public class VehicleRepository : IVehicleRepository
     {
-        public List<Car> getAllCars()
+        public List<Vehicle> getAllVehicles()
         {
-            return new List<Car>();
+            return new List<Vehicle>();
         }
     }
 }

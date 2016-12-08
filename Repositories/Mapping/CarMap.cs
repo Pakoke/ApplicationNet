@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Inventory.Mapping
 {
-    public class CarMap : ClassMap<Car>
+    public class CarMap : ClassMap<Vehicle>
     {
         public CarMap()
         {

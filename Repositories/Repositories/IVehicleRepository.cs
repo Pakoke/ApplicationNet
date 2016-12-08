@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Inventory.Repositories
 {
-    interface ICarRepository : IRepository
+    interface IVehicleRepository : IRepository
     {
-        List<Car> getAllCars();
+        List<Vehicle> getAllVehicles();
     }
 }
