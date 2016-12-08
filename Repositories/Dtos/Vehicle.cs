@@ -9,16 +9,16 @@ namespace Inventory.Dtos
 {
     public class Vehicle
     {
+        [Display(AutoGenerateField = true)]
         public string ID { get; set; }
 
-        [Display(Name = "Año")]
+        
         [Required]
         public int Year { get; set; }
 
-        [Display(Name = "Hecho por:")]
+ 
         public string Make { get; set; }
 
-        [Display(Name = "Modelo")]
         [Required]
         public string Model { get; set; }
 
