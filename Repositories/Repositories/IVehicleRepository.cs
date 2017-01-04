@@ -1,4 +1,5 @@
 ﻿using Inventory.Dtos;
+using Shared.NHibernate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Inventory.Repositories
 {
-    interface IVehicleRepository : IRepository
+    interface IVehicleRepository
     {
         List<Vehicle> getAllVehicles();
     }

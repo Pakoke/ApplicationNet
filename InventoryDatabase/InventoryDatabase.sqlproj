@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{45d8fc9e-2240-4187-bca9-2687c3944545}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -58,9 +58,17 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables" />
-    <Folder Include="Datas" />
+    <Folder Include="MasterDatas" />
+    <Folder Include="MasterDatas\Inserts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Vehicle.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="InventoryDatabase.publish.xml" />
+    <None Include="MasterDatas\Inserts\InsertVehicles.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="MasterDatas\Inventory.PostDeployment.sql" />
   </ItemGroup>
 </Project>

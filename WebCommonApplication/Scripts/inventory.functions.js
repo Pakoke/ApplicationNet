@@ -1,6 +1,7 @@
-﻿//window.onload = function () {
-//    alert("welcome");
-//};
+﻿DialogEdit = function (button) {
+    
+    EditValue(button);
+}
 
 EditValue = function (button) {
     //$(button).find("#button-edit").parent().parent().find("th[name*='data']");
@@ -23,19 +24,14 @@ EditValue = function (button) {
     
     $.ajax({
         type: "POST",
+        id: guid(),
         //url: '@(Url.Action("EditFromList", "Inventory"))',
-        url: "Inventory/EditList",
+        url: "Inventory/PostEditList",
         content: "application/json; charset=utf-8",
         dataType: "json",
-        data: { Make: $makedata, Model: $modeldata, Year: $yeardata },
+        data: JSON.stringify({ Make: $makedata, Model: $modeldata, Year: $yeardata } ),
         success: function (d) {
-            if (d.success == true)
-                //alert(d);
-                window.location = "index.html";
-            else 
-            {
                 alert(d);
-            }
         },
         error: function (xhr, textStatus, errorThrown) {
             // TODO: Show error
@@ -71,17 +67,13 @@ RemoveValue = function (button) {
     $.ajax({
         type: "POST",
         //url: '@(Url.Action("EditFromList", "Inventory"))',
-        url: "Inventory/RemoveList",
+        url: "Inventory/PostRemoveList",
         content: "application/json; charset=utf-8",
         dataType: "json",
         data: { Make: $makedata, Model: $modeldata, Year: $yeardata },
         success: function (d) {
-            if (d.success == true)
-                //alert(d);
-                window.location = "index.html";
-            else {
-                alert(d);
-            }
+           alert(d)
+            
         },
         error: function (xhr, textStatus, errorThrown) {
             // TODO: Show error
@@ -89,4 +81,14 @@ RemoveValue = function (button) {
     });
     
 };
+
+function guid() {
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+          .toString(16)
+          .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+      s4() + '-' + s4() + s4() + s4();
+}
 

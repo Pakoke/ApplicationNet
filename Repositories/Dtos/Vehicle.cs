@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace Inventory.Dtos
 {
-    public class Vehicle
+    public class Vehicle : IVehicle
     {
         [Display(AutoGenerateField = true)]
-        public string ID { get; set; }
+        public virtual int ID { get; set; }
 
         
         [Required]
-        public int Year { get; set; }
+        public virtual int Year { get; set; }
 
  
-        public string Make { get; set; }
+        public virtual string Make { get; set; }
 
         [Required]
-        public string Model { get; set; }
+        public virtual string Model { get; set; }
 
         public Vehicle()
         {

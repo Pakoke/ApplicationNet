@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Inventory.Mapping
 {
-    public class CarMap : ClassMap<Vehicle>
+    public class VehicleMap : ClassMap<Vehicle>
     {
-        public CarMap()
+        public VehicleMap()
         {
-            Id(x => x.ID).UniqueKey("ID").Column("ID").GeneratedBy.Identity();
+            Id(x => x.ID).UniqueKey("ID").Column("ID").GeneratedBy.Increment();
             Map(x => x.Make, "MAKE").CustomSqlType("NVARCHAR").Nullable();
             Map(x => x.Model, "MODEL").CustomSqlType("NVARCHAR").Not.Nullable();
             Map(x => x.Year, "YEAR").CustomSqlType("INTEGER").Not.Nullable();
